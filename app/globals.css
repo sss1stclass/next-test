@@ -1,0 +1,20 @@
+/* @import "tailwindcss"; */
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+}
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    padding: 10px;
+
+}
