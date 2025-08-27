@@ -12,15 +12,15 @@ const navigation = [
 const Navbar = () => {
     const [navstate, setNavstate] = useState(navigation);
     const changeActive = (name: string) => {
-        const newNav = navstate.map((item) => {
+        setNavstate(navstate.map((item) => {
             if (item.name === name) {
-               return { ...item, isActive: true };
+                return { ...item, isActive: true };
             } else {
-                item.isActive = false;
+                return { ...item, isActive: false };
             }
-            return item;
-        });
-        setNavstate(newNav);
+
+        }));
+
     }
     return (
         <div>
@@ -33,20 +33,19 @@ const Navbar = () => {
                 }}
             >
                 <ul className="flex">
-                    {navigation.map((item: any) => {
+                    {navstate.map((item: any) => {
                         return (
-                            <Link href={item.href} key={item.name}>
+                            <Link href={item.href} key={item.name} style={{ textDecoration: "none" }}>
                                 <li
                                     style={{
                                         color: "black",
-                                        backgroundColor: item.isActive? "white" : "lightgrey",
+                                        backgroundColor: item.isActive ? "white" : "lightgrey",
                                         fontWeight: 600,
                                         listStyle: "none",
-                                        textDecoration: "none",
                                         lineHeight: 1,
                                         padding: 12,
                                         borderRadius: "10px",
-                                        border: "2px solid black",
+                                        border: item.isActive ? "2px solid blue" : "2px solid black",
                                     }}
                                     onClick={() => changeActive(item.name)}
                                     key={item.name}
