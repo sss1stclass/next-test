@@ -1,9 +1,10 @@
 import React from 'react'
+import HookForm from '@/components/company/HookForm'
 
 const Company = () => {
   return (
     <div>
-      <h1>This is the Compay page</h1>
+      <HookForm/>
     </div>
   )
 }

@@ -9,6 +9,12 @@ const navigation = [
     { name: "Company", href: "company", isActive: false },
 ];
 
+interface NavItem {
+  name: string;
+  href: string;
+  isActive: boolean;
+}
+
 const Navbar = () => {
     const [navstate, setNavstate] = useState(navigation);
     const changeActive = (name: string) => {
@@ -33,7 +39,8 @@ const Navbar = () => {
                 }}
             >
                 <ul className="flex">
-                    {navstate.map((item: any) => {
+
+                    {navstate.map((item: NavItem) => {
                         return (
                             <Link href={item.href} key={item.name} style={{ textDecoration: "none" }}>
                                 <li
