@@ -8,7 +8,7 @@ import styles from './HookForm.module.css';
 
 const HookForm = () => {
     const [formData, setFormData] = useState({
-        name: "",
+        name: "sohil",
         email: "",
         age: 0
     })
